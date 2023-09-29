@@ -1,0 +1,127 @@
+Terminal Command
+	pwd - print working directory
+	cd - change directory 
+	mkdir - make directory 
+	ls - list all items within the current directory 
+	cd .. - back out one directory
+	rm - remove file  
+	rm -rf - remove directory  
+	open . - opens the current directory your in  
+	open specifiedItem - opens the specified file/directory 
+	touch - creates a blank document with specified extension (.txt, .pdf, .py, ect )
+
+
+Git Terminal Commands
+
+	git status: current git status of the specified directory 
+	git init: initiate/enables git tracking within the specified directory -> local repository
+
+		do not git init within a working git repository 
+			if git init has been initiated with the main directory all nested directories will be tracker by git
+			verify git before initializing using git status command first 
+
+	stages of git: working directory -> git add -> staging area -> git commit -> repository 
+	
+	Atomic Commits
+		commit should encompass a single feature, change or fix. In other words, try to keep each commit focused on a single thing 
+		This makes it much easier to undo or rollback changes later on. It also makes your code or project easier to review 
+
+	git commit: check points in the git repository or snap shot of changes:
+			commits can group gather relevent files that have been changed
+			must add a comment in present tense to what changes have been make to those files 
+				
+				command: git commit -m "my message"
+
+						 git commit -a -m "my message": add the all the checked documents and commits them with message in one line execution 
+
+
+	git add: add the changed files to the staging area for git tracking - must use git add prior to git commit 
+			multiple files can be added ad one time to this command seperated by a space 
+				
+				command: git add file1.txt file2.css file3.java file4.html
+						 git add . - adds all the changes to staging area 
+
+
+	git log: provides a log of the work that has been performed and committed to the repository 
+
+				command: git log - provides detailed commit messages 
+						 git log --oneline - provides the commit message in one line 
+
+
+	amending commits: after you made a commit you notice you forgot to add a file or the message contains a typo 	
+					  amending the commit allow you to "redo" the commit 
+					  this only works for the last commit performed 
+
+				command: git commit --ammend
+
+	.gitignore: files that you do not want git to track 
+				.DS_Store: ignore specific file name 
+				director_name/ : ignores specific directory 
+				*.log : ignores all files with the extension .log 
+
+				use website gitignore.io to get a recommendation of all the files to ignore based on the system you use or language you write in 
+
+
+				ex: secrets, API keys, credential, etc. 
+					OS files (.DS_Store on Mac)
+					Log files
+					Dependencies & packages 
+
+
+	
+	Branching: braches all you to work on your code without interfering with the main code base. This allows for various versions of the code to exist simultaniously
+			   and multiple people to work on one project without interfering with one another until the code is merged together
+
+			   Master Branch: the default branch name: many places that the master branch is the official branch 
+
+			   HEAD -> master: HEAD is a term in git that points to the current location in your repository at the last commit on a specific branch 
+
+			   
+
+		git branch: displays all the branchs in the repository 
+
+		git branch <branch-name>: creates a new branch based upon the current HEAD  
+
+		git switch <branch-name>: switch to another branch, same as checkout 
+			* git switch -c <branch-name>: will create a new branch and switch to the branch automatically 
+
+		git checkout <branch-name>: switch branches, but has many more features that apply to the function 
+			* git checkout -b <branch-name>: creates new branch and switches to the new branch at the same time 
+
+				**If you attempted to switch branches when you have unstaged changes that are in conflict- error will be displayed. If the unstaged changes are not committed or stashed they will be lost b/c they have not been "book marked" by git.
+				However, if you have a file that has no never been touch by git and creates no conflict when you switch branchs it will follow you to every branch you 
+				switch to util you commit it to specific branch 
+				Best practice, is to commit work prior to switching branches to avoid conflicts
+
+		Delete a branch: must NOT be on the branch that you would like to delete
+
+		git branch --d <branch-name>: delete a merged branch
+		git branch --D <branch-name>: used when branch has not been fully merged, this is equvailent to --delete --force 
+
+		git branch -v: provides additional info about the last commits of each branch and the current branch you are located on
+
+		Rename a brach: must be on the branch that you intend to rename 
+
+		git branch -m <new-branch-name>: renames the current branch to the new branch name; -m command is used for move/rename 
+
+	Merging: fast forward merge catches up the commits that occured on another branch 
+			 to merge you need to be on the branch you want to merge to 
+			 pass the git merge <branchName> of the branch you want to merge from 
+
+		git merge <branch-name>: you must be on the branch that you want to merge to and pass the name of the branch that you want to merge from 
+
+	Merge commit: new commit on master branch when - prompt for a message: occurs when work is down on one branch that does not interfer with the file that you work on 				on another branch. 
+
+
+	Merge conflict: depending on the specific changes your trying to merge, Git may not be able to automatically merge. This result sin merge conflicm which need to be 				manually resolved
+
+		Resolving Conflicts:
+			1. Open the files with merge conflict 
+			2. Edit the file to remove the conflict - decide which branches content you want to keep in each conflict or keep the contect from both 
+			3. remove conflict markers in the document 
+			4. add you changes and then make a commit 
+
+				The content from the branch you are trying to merge from is displayed between the  ============ and >>>>>>>>>> symbols 
+
+
+	Git Diff: view changes b/w commits, branches, files and our working directory 
