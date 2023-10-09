@@ -4,21 +4,23 @@ public class T1_primeNumber {
 
     public static void main(String[] args) {
 
-        System.out.println(reverseNegative(-5));
+        isPrime(3);
 
     }
 
-    public static int reverseNegative(int num){
+    public static void isPrime(double num){
 
-        int positiveNumber = num * (-1);
-
-        return positiveNumber;
-
+        if(num > 0 && num % 2 != 0){
+            System.out.println(num + " is a prime number");
+        }else{
+            System.out.println(num + " is not a prime number");
+        }
     }
+
 
 }
-/*
-2. Numbers -- Reverse negative number
-Write a return method that can reverse
-negative number and return it as int
- */
+ /*
+    1. Numbers -- Prime Number
+Write a method that can check if a number is
+prime or not
+     */
