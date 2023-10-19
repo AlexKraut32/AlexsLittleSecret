@@ -1,33 +1,6 @@
+package Alex_codingTasks.week1;
 
-//alexs little secret 
-
-Write a method which prints out the numbers from 1 to 30 but
-for numbers which are a multiple of 3, print "FIN" instead of the
-number and for numbers which are a multiple of 5, print "RA" instead
-of the number. for numbers which are a multiple of both 3 and 5, print
-"FINRA" instead of the number.
-Solution 1:
-public static void FINRA( ) {
-String result = "";
-for(int i=1; i <= 30; i++) {
-if(i % 5==0 && i %3 ==0)
-result += "FINRA ";
-else if(i%5 == 0)
-result += "RA ";
-else if(i%3==0)
-result+="FIN ";
-else
-result += i+" ";
- }
-System.out.println(result);
-}
-
-//alexs little secret 
-
-package GroupMeeting;
-
-public class Task2DivideWithoutOperator {
-
+public class T2_DivideWithoutOperator {
     public static void main(String[] args) {
 
         divides(10,2);
@@ -62,3 +35,4 @@ public class Task2DivideWithoutOperator {
 Write a method that can divide two numbers without using the division operator
 
  */
+
