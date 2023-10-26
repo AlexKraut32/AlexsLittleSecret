@@ -2,7 +2,7 @@ package Eugene_codingTasks.week03;
 
 public class ReverseNegativeNumber {
     public static void main(String[] args) {
-        System.out.println(returnMethod(-357));
+        System.out.println(returnMethod(-67));
     }
     public static int returnMethod(int num) { //Made for numbers 0-999
         num = num * -1;
@@ -10,7 +10,7 @@ public class ReverseNegativeNumber {
         if (num >= 100) {
             hundreds = num / 100; //Finding hundreds to move it back ex.357-->3
             tens = num - (hundreds * 100); //Finding tens ex.357-300=57
-            int num1 = tens / 10 * 10; //Finding middle digit 57/10=5
+            int num1 = tens / 10 * 10; //Finding middle digit 57/10=50
             int num2 = tens % 10 * 100; //Finding last digit to move it front 57%10=7*100=700
             num = num2 + num1 + hundreds; //
         } else if (num >= 10){
