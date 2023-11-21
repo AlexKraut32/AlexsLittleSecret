@@ -2,7 +2,7 @@ package Eugene_codingTasks.week06;
 
 public class PasswordValidation {
     public static void main(String[] args) {
-        System.out.println(passwordValidationMethod("WEr22!"));
+        System.out.println(passwordValidationMethod("WErwwww !"));
     }
     public static Boolean passwordValidationMethod(String password) {
         Boolean lowerCase = false, upperCase = false, specChar = false, digit = false;
