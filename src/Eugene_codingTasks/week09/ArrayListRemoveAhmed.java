@@ -8,12 +8,8 @@ public class ArrayListRemoveAhmed {
     public static void main(String[] args) {
         ArrayList<String> list = new ArrayList<String>();
         list.addAll(Arrays.asList("Ahmed", "John", "Eric", "Ahmed"));
+        list.removeIf(p -> p.equals("Ahmed"));
 
-        for (int i = 0; i < list.size(); i++) {
-        if (list.get(i).equals("Ahmed")){
-            list.remove(i);
-        }
-        }
         System.out.println(list);
     }
 }
