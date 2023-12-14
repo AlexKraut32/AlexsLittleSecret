@@ -23,7 +23,7 @@ public class Array_N_unique_integers {
         return arr;
     }
     public static void main(String[] args) {
-        System.out.println(Arrays.toString(sumZero(4)));
+        System.out.println(Arrays.toString(sumZero(35)));
     }
 }
 
